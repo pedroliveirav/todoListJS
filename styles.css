@@ -1,0 +1,144 @@
+:root {
+    --primary-color: #8df379;
+    --gradient-color: #07c569;
+    --snow-color: #ffffff;
+    --black-color: #000000;
+    --contrast-check-color: #00a0a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+body {
+    background-image: linear-gradient(
+    120deg,
+    var(--primary-color), 
+    var(--gradient-color)
+    );
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    font-size: 1.5rem;
+}
+
+header, form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input, form button {
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    background: var(--snow-color);
+}
+
+form button{
+    color: var(--primary-color);
+    background: var(--snow-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover{
+    background: var(--primary-color);
+    color: var(--snow-color);
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    min-width:40%;
+    list-style: none;
+}
+
+.todo {
+    margin: 0.5rem;
+    background: var(--snow-color);
+    color: var(--black-color);
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.todo li {
+    flex: 1;
+}
+
+.trash-btn, .complete-btn {
+    background: var(--gradient-color);
+    color: var(--snow-color);
+    border: none;
+    font-size: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.complete-btn {
+    background: var(--contrast-check-color);
+}
+
+.todo-item {
+    padding: 0 0.5rem;
+}
+
+.fa-trash, .fa-check {
+    pointer-events: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall {
+    transform:  translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    color: var(--gradient-color);
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    background: var(--contrast-check-color);
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    color: var(--snow-color);
+}
+
+.select:hover::after {
+    background: var(--snow-color);
+    color: var(--contrast-check-color);
+}
